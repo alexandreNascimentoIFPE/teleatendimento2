@@ -87,6 +87,7 @@ var peer = new Peer({ key: 'lwjd5qra8257b9' });
 // display the peer id on the DOM 
 peer.on('open', function () {
     document.getElementById("displayId").innerHTML = peer.id
+    
 })
 
 // when a client connects to another connected client
