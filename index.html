@@ -46,6 +46,7 @@
                                         <video id="lVideo" autoplay="autplay" muted>
                                     </td>
                                 </tr>
+                                
                             </table>
                         </td>
                         <td width="560" align="center" valign="middle">
@@ -55,12 +56,10 @@
                             <img src="/teleatendimento_03.png" alt="">
                             
                             <div id="chat-window">
-                                <div id="output"></div>
+                                <div id="output" align="left" style="width: 400px; height: 300px; overflow: scroll;"></div>
                                 <div id="typing"></div>
                             </div>
-
-
-                            <div class="container">
+                            <div class="container" style=";">
                                 <input type="text" id="handle" class="form-control" placeholder="name" required
                                     autofocus>
 
@@ -76,8 +75,8 @@
             </td>
         </tr>
         <tr>
-            <td height="40">
-                <div class="container">
+            <td height="40" class="align-text-top">
+                <div class="container" style="margin: 0px;">
                     <p> seu id :<span id="displayId"></span></p>
                     <input type="text" id="connId" class="form-control"
                         placeholder="digite aqui o ID que lhe foi enviado" required>

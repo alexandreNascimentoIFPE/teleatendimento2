@@ -148,9 +148,6 @@ document.getElementById('call_button').addEventListener('click', function () {
 
     call.on('stream', function (stream) {
         window.peer_stream = stream;
-        document.getElementById('displayId').style.display = 'none';
-        document.getElementById('connId').style.display = 'none';
-        document.getElementById('call_button').style.display = 'none';
         recStream(stream, 'rVideo');
     })
 }); 
