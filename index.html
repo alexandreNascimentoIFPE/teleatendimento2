@@ -20,20 +20,7 @@
     <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-    <h1 class="h3 mb-3 font-weight-normal" style="display: none;">Chat With Me</h1>
-    <div id="chat-window" style="display: none;">
-        <div id="output"></div>
-        <div id="typing"></div>
-    </div>
 
-
-    <div class="container" style="display: none;">
-        <input type="text" id="handle" class="form-control" placeholder="name" required autofocus>
-
-        <input type="text" id="message" class="form-control" placeholder="enter a message" required>
-
-        <button id="button" class="btn btn-lg btn-primary btn-block" type="submit">Send</button>
-    </div>
     <table width="100%" border="0" cellpadding="0" cellspacing="5">
         <tr bgcolor="#FFFFFF">
             <td height="65">
@@ -66,6 +53,22 @@
                         </td>
                         <td align="center" valign="top">área do chat
                             <img src="/teleatendimento_03.png" alt="">
+                            <h1 class="h3 mb-3 font-weight-normal" style="display: none;">Chat With Me</h1>
+                            <div id="chat-window">
+                                <div id="output"></div>
+                                <div id="typing"></div>
+                            </div>
+
+
+                            <div class="container">
+                                <input type="text" id="handle" class="form-control" placeholder="name" required
+                                    autofocus>
+
+                                <input type="text" id="message" class="form-control" placeholder="enter a message"
+                                    required>
+
+                                <button id="button" class="btn btn-lg btn-primary btn-block" type="submit">Send</button>
+                            </div>
                         </td>
                     </tr>
                 </table>
@@ -76,8 +79,10 @@
             <td height="40">
                 <div class="container">
                     <p> seu id :<span id="displayId"></span></p>
-                    <input type="text" id="connId" class="form-control" placeholder="digite aqui o ID que lhe foi enviado" required>
-                    <button id="call_button" class="btn btn-lg btn-danger btn-block" type="submit">Fazer chamada</button>
+                    <input type="text" id="connId" class="form-control"
+                        placeholder="digite aqui o ID que lhe foi enviado" required>
+                    <button id="call_button" class="btn btn-lg btn-danger btn-block" type="submit">Fazer
+                        chamada</button>
                 </div>
             </td>
         </tr>
