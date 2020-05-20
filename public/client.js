@@ -72,7 +72,7 @@ getLVideo({
         recStream(stream, 'lVideo');
     },
     error: function (err) {
-        alert("cannot access your camera");
+        alert("não foi possivel acessar a camera");
         console.log(err);
     }
 })
@@ -100,17 +100,17 @@ peer.on('connection', function (connection) {
 
 // 
 peer.on('error', function (err) {
-    alert("an error has happened:" + err);
+    alert("houve um erro:" + err);
     console.log(err);
 })
 // onclick connection button 
-document.getElementById('conn_button').addEventListener('click', function () {
+document.getElementById('call_button').addEventListener('click', function () {
     peer_id = document.getElementById("connId").value;
     // if there is a peer id, use global var to connect with current peerid
     if (peer_id) {
         conn = peer.connect(peer_id)
     } else {
-        alert("enter an id");
+        alert("digite um ID válido");
         return false;
     }
 })
@@ -118,23 +118,25 @@ document.getElementById('conn_button').addEventListener('click', function () {
 peer.on('call', function (call) {
 
     // this prompt can act funny if the browser tab is not ACTIVE it can return false
-    var acceptCall = confirm("Do you want to answer this call?");
+    var acceptCall = confirm("você aceita essa chamada de video?");
     // if accpt, exchange across the browser
     if (acceptCall) {
         call.answer(window.localstream);
 
         call.on('stream', function (stream) {
 
+            document.getElementById('connId').style.display = 'none';
+            document.getElementById('call_button').style.display = 'none';
             window.peer_stream = stream;
 
             recStream(stream, 'rVideo')
         });
         // display alert if call is denien
         call.on('close', function () {
-            alert('The call has been denind');
+            alert('a chamada foi encerrada');
         })
     } else {
-        console.log("call denied")
+        console.log("chamada negada")
     }
 });
 
