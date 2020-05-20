@@ -87,7 +87,7 @@ var peer = new Peer({ key: 'lwjd5qra8257b9' });
 // display the peer id on the DOM 
 peer.on('open', function () {
     document.getElementById("displayId").innerHTML = peer.id
-    
+
 })
 
 // when a client connects to another connected client
@@ -125,8 +125,6 @@ peer.on('call', function (call) {
 
         call.on('stream', function (stream) {
 
-            document.getElementById('connId').style.display = 'none';
-            document.getElementById('call_button').style.display = 'none';
             window.peer_stream = stream;
 
             recStream(stream, 'rVideo')
@@ -150,7 +148,9 @@ document.getElementById('call_button').addEventListener('click', function () {
 
     call.on('stream', function (stream) {
         window.peer_stream = stream;
-
+        document.getElementById('displayId').style.display = 'none';
+        document.getElementById('connId').style.display = 'none';
+        document.getElementById('call_button').style.display = 'none';
         recStream(stream, 'rVideo');
     })
 }); 
